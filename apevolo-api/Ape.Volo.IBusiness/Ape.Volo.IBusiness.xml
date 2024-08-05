@@ -1,0 +1,4356 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ape.Volo.IBusiness</name>
+    </assembly>
+    <members>
+        <member name="T:Ape.Volo.IBusiness.Base.BaseEntityDto`1">
+            <summary>
+            实体基类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.CreateBy">
+            <summary>
+            创建者名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.UpdateBy">
+            <summary>
+            更新者名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.UpdateTime">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.BaseEntityDto`1.IsDeleted">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Base.IBaseServices`1">
+            <summary>
+            业务基类 常用增删查改方法
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.IBaseServices`1.SugarClient">
+            <summary>
+            sqlSugarClient
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.AddEntityAsync(`0)">
+            <summary>
+            添加实体
+            </summary>
+            <param name="entity">实体对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.AddEntityListAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            批量添加实体
+            </summary>
+            <param name="entitys">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.UpdateEntityAsync(`0,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            更新实体
+            </summary>
+            <param name="entity">实体对象</param>
+            <param name="lstIgnoreColumns">忽略列</param>
+            <param name="isLock">是否加锁</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.UpdateEntityListAsync(System.Collections.Generic.List{`0})">
+            <summary>
+            批量更新实体
+            </summary>
+            <param name="entitys">实体集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.LogicDelete``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            逻辑删除 操作的类需继承ISoftDeletedEntity
+            </summary>
+            <param name="exp"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Base.IBaseServices`1.Table">
+            <summary>
+            泛型Queryable
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Base.IBaseServices`1.TableWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Nullable{SqlSugar.OrderByType},System.Boolean)">
+            <summary>
+            泛型Queryable
+            </summary>
+            <param name="whereExpression">条件表达式</param>
+            <param name="orderExpression">排序表达式</param>
+            <param name="orderByType">排序方式</param>
+            <param name="isClearCreateByFilter">清除创建人过滤器</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto">
+            <summary>
+            邮箱账户Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.Email">
+             <summary>
+            电子邮件地址
+             </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.DisplayName">
+            <summary>
+            电子邮件显示名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.Host">
+            <summary>
+            电子邮件主机
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.Port">
+            <summary>
+            电子邮件端口
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.Username">
+            <summary>
+            电子邮件用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.Password">
+            <summary>
+            电子邮件密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.EnableSsl">
+            <summary>
+            是否SSL
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto.UseDefaultCredentials">
+            <summary>
+            是否与请求一起发送应用程序的默认系统凭据
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto">
+            <summary>
+            邮箱模板Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.Name">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.BccEmailAddresses">
+            <summary>
+            抄送邮箱地址
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.Body">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.IsActive">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto.EmailAccountId">
+            <summary>
+            邮箱账户标识符
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto">
+            <summary>
+            邮箱账户Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.Email">
+             <summary>
+            电子邮件地址
+             </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.DisplayName">
+            <summary>
+            电子邮件显示名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.Host">
+            <summary>
+            电子邮件主机
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.Port">
+            <summary>
+            电子邮件端口
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.Username">
+            <summary>
+            电子邮件用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.Password">
+            <summary>
+            电子邮件密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.EnableSsl">
+            <summary>
+            是否SSL
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailAccountDto.UseDefaultCredentials">
+            <summary>
+            是否与请求一起发送应用程序的默认系统凭据
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto">
+            <summary>
+            邮箱模板Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.Name">
+            <summary>
+            模板名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.BccEmailAddresses">
+            <summary>
+            抄送邮箱地址
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.Body">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.IsActive">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Message.Email.EmailMessageTemplateDto.EmailAccountId">
+            <summary>
+            发送邮箱账户
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto">
+            <summary>
+            审计日志Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Area">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Controller">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Action">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.RequestUrl">
+            <summary>
+            请求Url
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.RequestParameters">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.ResponseData">
+            <summary>
+            相应结果
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.ExecutionDuration">
+            <summary>
+            执行耗时(毫秒)
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.RequestIp">
+            <summary>
+            请求IP
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.IpAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.OperatingSystem">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.BrowserName">
+            <summary>
+            浏览器名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.AuditLogDto.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto">
+            <summary>
+            系统异常Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Area">
+            <summary>
+            区
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Controller">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Action">
+            <summary>
+            方法
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.RequestUrl">
+            <summary>
+            请求Url
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.RequestParameters">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.ExceptionMessage">
+            <summary>
+            异常消息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.ExceptionMessageFull">
+            <summary>
+            异常完整消息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.ExceptionStack">
+            <summary>
+            异常堆栈信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.LogLevel">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.RequestIp">
+            <summary>
+            请求IP
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.IpAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.OperatingSystem">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.BrowserName">
+            <summary>
+            浏览器名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Monitor.ExceptionLogDto.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto.Group">
+            <summary>
+            组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto.Url">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto">
+            <summary>
+            部门Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto.ParentId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto">
+            <summary>
+            岗位Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto">
+            <summary>
+            菜单Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Permission">
+            <summary>
+            权限标识
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.IFrame">
+            <summary>
+            是否IFrame
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Component">
+            <summary>
+            组件
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.ComponentName">
+            <summary>
+            组件名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.ParentId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Icon">
+            <summary>
+            Icon图标
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto.SubCount">
+            <summary>
+            子菜单个数
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto">
+            <summary>
+            角色Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Level">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.DataScopeType">
+            <summary>
+            数据权限
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Permission">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Depts">
+            <summary>
+            角色部门
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Menus">
+            <summary>
+            角色菜单
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto.Apis">
+            <summary>
+            角色菜单
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto">
+            <summary>
+            用户Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Dept">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Roles">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.Jobs">
+            <summary>
+            岗位
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.TenantId">
+            <summary>
+            租户ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserJobDto">
+            <summary>
+            用户岗位Dto
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserJobDto.#ctor(System.Int64,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="jobId"></param>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserJobDto.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserJobDto.JobId">
+            <summary>
+            岗位ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserRoleDto">
+            <summary>
+            用户角色Dto
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserRoleDto.#ctor(System.Int64,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <param name="roleId"></param>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserRoleDto.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserRoleDto.RoleId">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto">
+            <summary>
+            部门Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.ParentId">
+            <summary>
+            父级Id
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Children">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.SubCount">
+            <summary>
+            子节点个数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.HasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Leaf">
+            <summary>
+            页
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentDto.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.DepartmentSmallDto">
+            <summary>
+            部门Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentSmallDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.DepartmentSmallDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.JobDto">
+            <summary>
+            岗位Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.JobDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.JobDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.JobDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.JobSmallDto">
+            <summary>
+            岗位Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.JobSmallDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.JobSmallDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.MenuDto">
+            <summary>
+            菜单Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Permission">
+            <summary>
+            权限标识
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.IFrame">
+            <summary>
+            是否IFrame
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Component">
+            <summary>
+            组件
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.ComponentName">
+            <summary>
+            组件名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.ParentId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Icon">
+            <summary>
+            Icon
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.SubCount">
+            <summary>
+            子节点个数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Children">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Leaf">
+            <summary>
+            页
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.HasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.MenuDto.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.RoleApisDto">
+            <summary>
+            角色菜单Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleApisDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.RoleDeptDto">
+            <summary>
+            角色部门Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDeptDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.RoleDto">
+            <summary>
+            角色Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.Level">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.DataScopeType">
+            <summary>
+            数据权限
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.Permission">
+            <summary>
+            权限标识
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.MenuList">
+            <summary>
+            菜单列表
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.DepartmentList">
+            <summary>
+            部门列表
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleDto.Apis">
+            <summary>
+            菜单列表
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.RoleMenuDto">
+            <summary>
+            角色菜单Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleMenuDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto">
+            <summary>
+            角色Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto.Permission">
+            <summary>
+            权限标识符
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto.Level">
+            <summary>
+            等级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.RoleSmallDto.DataScopeType">
+            <summary>
+            数据权限
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UpdateUserCenterDto">
+            <summary>
+            用户个人中心Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserCenterDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserCenterDto.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserCenterDto.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UpdateUserEmailDto">
+            <summary>
+            用户邮箱Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserEmailDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserEmailDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserEmailDto.Code">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UpdateUserPassDto">
+            <summary>
+            用户密码Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserPassDto.OldPassword">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserPassDto.NewPassword">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UpdateUserPassDto.ConfirmPassword">
+            <summary>
+            确认新密码
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UserDeptDto">
+            <summary>
+            用户部门Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDeptDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UserDto">
+            <summary>
+            用户Dto
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Dto.Permission.UserDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.IsAdmin">
+            <summary>
+            内置管理员
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.DeptId">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Phone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.AvatarPath">
+            <summary>
+            头像文件路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.PasswordReSetTime">
+            <summary>
+            最后修改密码时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Roles">
+            <summary>
+            角色列表
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Dept">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Jobs">
+            <summary>
+            岗位列表
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.TenantId">
+            <summary>
+            租户ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Tenant">
+            <summary>
+            租户
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UserJobDto">
+            <summary>
+            用户岗位Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserJobDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserJobDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Permission.UserRoleDto">
+            <summary>
+            用户角色Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserRoleDto.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserRoleDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto">
+            <summary>
+            邮件队列Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.From">
+            <summary>
+            发件邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.FromName">
+            <summary>
+            发件人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.To">
+            <summary>
+            收件邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.ToName">
+            <summary>
+            收件人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.ReplyTo">
+            <summary>
+            回复邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.ReplyToName">
+            <summary>
+            回复人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.Priority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.Cc">
+            <summary>
+            抄送
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.Bcc">
+            <summary>
+            密件抄送
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.Subject">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.Body">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.SentTries">
+            <summary>
+            发送上限次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.SendTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto.EmailAccountId">
+            <summary>
+            发件邮箱ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto">
+            <summary>
+            邮件队列Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.From">
+            <summary>
+            发件邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.FromName">
+            <summary>
+            发件人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.To">
+            <summary>
+            收件邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.ToName">
+            <summary>
+            收件人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.ReplyTo">
+            <summary>
+            回复邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.ReplyToName">
+            <summary>
+            回复人名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.Priority">
+            <summary>
+            优先级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.Cc">
+            <summary>
+            抄送
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.Bcc">
+            <summary>
+            密件抄送
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.Subject">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.Body">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.SentTries">
+            <summary>
+            发送上限次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.SendTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto.EmailAccountId">
+            <summary>
+            发件邮箱ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.AppSecretDto">
+            <summary>
+            应用密钥Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.AppSecretDto.AppId">
+            <summary>
+            应用ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.AppSecretDto.AppSecretKey">
+            <summary>
+            签名Key
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.AppSecretDto.AppName">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.AppSecretDto.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto">
+            <summary>
+            应用密钥Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto.AppId">
+            <summary>
+            应用ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto.AppSecretKey">
+            <summary>
+            签名Key
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto.AppName">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto">
+            <summary>
+            字典详情Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto.DictId">
+            <summary>
+            字典ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto.DictSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto">
+            <summary>
+            字典Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto.DictType">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto.DictDetails">
+            <summary>
+            字典详情
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto">
+            <summary>
+            文件记录Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.ContentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.ContentTypeName">
+            <summary>
+            文件类型名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.ContentTypeNameEn">
+            <summary>
+            文件类型名称(EN)
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.OriginalName">
+            <summary>
+            源名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.NewName">
+            <summary>
+            新名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.FilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto.Size">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto">
+            <summary>
+            任务调度Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.TaskGroup">
+            <summary>
+            任务分组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.Cron">
+            <summary>
+            cron 表达式
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.ClassName">
+            <summary>
+            任务所在类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.Description">
+            <summary>
+            任务描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.Principal">
+            <summary>
+            任务负责人
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.AlertEmail">
+            <summary>
+            告警邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.PauseAfterFailure">
+            <summary>
+            任务失败后是否继续
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.RunTimes">
+            <summary>
+            执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.TriggerType">
+            <summary>
+            触发器类型（0、simple 1、cron）
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.IntervalSecond">
+            <summary>
+            执行间隔时间, 秒为单位
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.CycleRunTimes">
+            <summary>
+            循环执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.IsEnable">
+            <summary>
+            是否启动
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto.RunParams">
+            <summary>
+            执行传参
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto">
+            <summary>
+            全局设置Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto.Name">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.TenantId">
+            <summary>
+            租户Id 用户绑定用的
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.ConfigId">
+            <summary>
+            标识Id 获取租户连接用的
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.DbType">
+            <summary>
+            数据库类型<br/>
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Connection">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.DictDetailDto">
+            <summary>
+            字典详情Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDetailDto.DictId">
+            <summary>
+            字典ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDetailDto.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDetailDto.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDetailDto.DictSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.DictDto">
+            <summary>
+            字典Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDto.DictType">
+            <summary>
+            字典类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.DictDto.DictDetails">
+            <summary>
+            字典详情
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.FileRecordDto">
+            <summary>
+            文件记录Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.ContentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.ContentTypeName">
+            <summary>
+            文件类型名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.ContentTypeNameEn">
+            <summary>
+            文件类型名称(EN)
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.OriginalName">
+            <summary>
+            源名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.NewName">
+            <summary>
+            新名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.FilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.FileRecordDto.Size">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.QuartzNetDto">
+            <summary>
+            任务调度Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.TaskGroup">
+            <summary>
+            任务分组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.Cron">
+            <summary>
+            cron 表达式
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.ClassName">
+            <summary>
+            任务所在类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.Description">
+            <summary>
+            任务描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.Principal">
+            <summary>
+            任务负责人
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.AlertEmail">
+            <summary>
+            告警邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.PauseAfterFailure">
+            <summary>
+            任务失败后是否继续
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.RunTimes">
+            <summary>
+            执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.TriggerType">
+            <summary>
+            触发器类型（0、simple 1、cron）
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.IntervalSecond">
+            <summary>
+            执行间隔时间, 秒为单位
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.CycleRunTimes">
+            <summary>
+            循环执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.IsEnable">
+            <summary>
+            是否启动
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.RunParams">
+            <summary>
+            执行传参
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetDto.TriggerStatus">
+            <summary>
+            触发器状态
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto">
+            <summary>
+            任务调度日志Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.TaskId">
+            <summary>
+            任务ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.TaskGroup">
+            <summary>
+            任务分组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.ClassName">
+            <summary>
+            任务所在类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.Cron">
+            <summary>
+            cron 表达式
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.ExceptionDetail">
+            <summary>
+            异常详情
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.ExecutionDuration">
+            <summary>
+            执行耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.RunParams">
+            <summary>
+            执行传参
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.QuartzNetLogDto.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.SettingDto">
+            <summary>
+            全局设置Dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.SettingDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.SettingDto.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.SettingDto.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.SettingDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Dto.System.TenantDto">
+            <summary>
+            租户dto
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.ConfigId">
+            <summary>
+            库Id
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.DbType">
+            <summary>
+            库类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.ConnectionString">
+            <summary>
+            库连接
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport">
+            <summary>
+            邮箱账户导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.Email">
+             <summary>
+            邮箱
+             </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.DisplayName">
+            <summary>
+            电子邮件显示名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.Host">
+            <summary>
+            电子邮件主机
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.Port">
+            <summary>
+            电子邮件端口
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.Username">
+            <summary>
+            电子邮件用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.Password">
+            <summary>
+            电子邮件密码
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.EnableSsl">
+            <summary>
+            是否SSL
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport.UseDefaultCredentials">
+            <summary>
+            是否与请求一起发送应用程序的默认系统凭据
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport">
+            <summary>
+            在线用户导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.Account">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.NickName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.Dept">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.Ip">
+            <summary>
+            登录IP
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.Address">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.OperatingSystem">
+            <summary>
+            操作系统
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.DeviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.BrowserName">
+            <summary>
+            浏览器名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.Version">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.LoginTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Monitor.OnlineUserExport.AccessToken">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport">
+            <summary>
+            部门导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport.Name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport.ParentId">
+            <summary>
+            部门父ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport.EnabledState">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.DepartmentExport.SubCount">
+            <summary>
+            子部门个数
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Permission.JobExport">
+            <summary>
+            岗位导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.JobExport.Name">
+            <summary>
+            岗位名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.JobExport.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.JobExport.EnabledState">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport">
+            <summary>
+            菜单导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Title">
+            <summary>
+            菜单标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Path">
+            <summary>
+            组件路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Permission">
+            <summary>
+            权限标识符
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.IsFrame">
+            <summary>
+            是否IFrame
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Component">
+            <summary>
+            组件
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.ComponentName">
+            <summary>
+            组件名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.PId">
+            <summary>
+            菜单父ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.Icon">
+            <summary>
+            Icon图标
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.MenuType">
+            <summary>
+            菜单类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.IsCache">
+            <summary>
+            是否缓存
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.IsHidden">
+            <summary>
+            是否隐藏
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.MenuExport.SubCount">
+            <summary>
+            子菜单个数
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport">
+            <summary>
+            角色导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.Name">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.Level">
+            <summary>
+            角色等级
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.Description">
+            <summary>
+            角色描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.DataScopeType">
+            <summary>
+            数据范围
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.DataDept">
+            <summary>
+            数据部门
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.RoleExport.Permission">
+            <summary>
+            角色代码
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.Permission.UserExport">
+            <summary>
+            用户导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Username">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Role">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.NickName">
+            <summary>
+            用户昵称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Phone">
+            <summary>
+            用户电话
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Email">
+            <summary>
+            用户邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Enabled">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Dept">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Job">
+            <summary>
+            岗位名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.Permission.UserExport.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.AppSecretExport">
+            <summary>
+            密钥导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.AppSecretExport.AppId">
+            <summary>
+            应用ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.AppSecretExport.AppSecretKey">
+            <summary>
+            应用密钥
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.AppSecretExport.AppName">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.AppSecretExport.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.DictExport">
+            <summary>
+            字典导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.DictExport.DictType">
+            <summary>
+            字典类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.DictExport.Name">
+            <summary>
+            字典名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.DictExport.Description">
+            <summary>
+            字典描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.DictExport.Lable">
+            <summary>
+            字典标签
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.DictExport.Value">
+            <summary>
+            字典值
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport">
+            <summary>
+            文件记录导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.Description">
+            <summary>
+            文件描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.ContentType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.ContentTypeName">
+            <summary>
+            文件类型名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.ContentTypeNameEn">
+            <summary>
+            文件类型名称(EN)
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.OriginalName">
+            <summary>
+            源名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.NewName">
+            <summary>
+            新名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.FilePath">
+            <summary>
+            存储路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.FileRecordExport.Size">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport">
+            <summary>
+            任务调度导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.TaskGroup">
+            <summary>
+            任务分组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.Cron">
+            <summary>
+            cron 表达式
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.ClassName">
+            <summary>
+            任务所在类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.Description">
+            <summary>
+            任务描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.Principal">
+            <summary>
+            任务负责人
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.AlertEmail">
+            <summary>
+            告警邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.PauseAfterFailure">
+            <summary>
+            任务失败后是否继续
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.RunTimes">
+            <summary>
+            执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.TriggerType">
+            <summary>
+            触发器类型（0、simple 1、cron）
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.IntervalSecond">
+            <summary>
+            执行间隔时间, 秒为单位
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.CycleRunTimes">
+            <summary>
+            循环执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.IsEnable">
+            <summary>
+            是否启动
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.RunParams">
+            <summary>
+            执行传参
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.TriggerStatus">
+            <summary>
+            触发器状态
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetExport.TriggerTypeStr">
+            <summary>
+            触发器模式
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport">
+            <summary>
+            任务调度日志导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.TaskId">
+            <summary>
+            任务ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.TaskGroup">
+            <summary>
+            任务组
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.AssemblyName">
+            <summary>
+            程序集名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.ClassName">
+            <summary>
+            执行类
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.Cron">
+            <summary>
+            Cron表达式
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.ExceptionDetail">
+            <summary>
+            异常详情
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.ExecutionDuration">
+            <summary>
+            执行耗时
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.RunParams">
+            <summary>
+            执行传参
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.QuartzNetLogExport.IsSuccess">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.SettingExport">
+            <summary>
+            设置导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.SettingExport.Name">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.SettingExport.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.SettingExport.EnabledState">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.SettingExport.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.ExportModel.System.TenantExport">
+            <summary>
+            租户导出模板
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.ConfigId">
+            <summary>
+            库Id
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.DbType">
+            <summary>
+            库类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.ConnectionString">
+            <summary>
+            库连接
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService">
+            <summary>
+            邮箱账户接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService.CreateAsync(Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateEmailAccountDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService.UpdateAsync(Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailAccountDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateEmailAccountDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService.QueryAsync(Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="emailAccountQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="emailAccountQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.IEmailMessageTemplateService">
+            <summary>
+            邮件消息模板接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailMessageTemplateService.CreateAsync(Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateEmailMessageTemplateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailMessageTemplateService.UpdateAsync(Ape.Volo.IBusiness.Dto.Message.Email.CreateUpdateEmailMessageTemplateDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateEmailMessageTemplateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailMessageTemplateService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailMessageTemplateService.QueryAsync(Ape.Volo.IBusiness.QueryModel.EmailMessageTemplateQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="messageTemplateQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.IEmailScheduleTask">
+            <summary>
+            邮件任务计划
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailScheduleTask.ExecuteAsync(System.Int64)">
+            <summary>
+            Executes a task
+            </summary>
+            <param name="emailId">邮件队列ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.IEmailSender">
+            <summary>
+            邮件发送接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.IEmailSender.SendEmailAsync(Ape.Volo.Entity.Message.Email.EmailAccount,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Sends an email
+            </summary>
+            <param name="emailAccount">Email account to use</param>
+            <param name="subject">Subject</param>
+            <param name="body">Body</param>
+            <param name="fromAddress">From address</param>
+            <param name="fromName">From display name</param>
+            <param name="toAddress">To address</param>
+            <param name="toName">To display name</param>
+            <param name="replyToAddress">ReplyTo address</param>
+            <param name="replyToName">ReplyTo display name</param>
+            <param name="bcc">BCC addresses list</param>
+            <param name="cc">CC addresses list</param>
+            <param name="attachmentFilePath">Attachment file path</param>
+            <param name="attachmentFileName">Attachment file name. If specified, then this file name will be sent to a recipient. Otherwise, "AttachmentFilePath" name will be used.</param>
+            <param name="attachedDownloadId">Attachment download ID (another attachment)</param>
+            <param name="headers">Headers</param>
+            <returns>A task that represents the asynchronous operation</returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.ISmtpBuilder">
+            <summary>
+            邮箱Smtp接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.ISmtpBuilder.BuildAsync(Ape.Volo.Entity.Message.Email.EmailAccount)">
+            <summary>
+            Create a new SMTP client for a specific email account
+            </summary>
+            <param name="emailAccount">Email account to use. If null, then would be used EmailAccount by default</param>
+            <returns>
+            A task that represents the asynchronous operation
+            The task result contains the an SMTP client that can be used to send email messages
+            </returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Message.Email.ISmtpBuilder.ValidateServerCertificate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
+            </summary>
+            <param name="sender">An object that contains state information for this validation.</param>
+            <param name="certificate">The certificate used to authenticate the remote party.</param>
+            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+            <returns>A System.Boolean value that determines whether the specified certificate is accepted for authentication</returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Monitor.IAuditLogService">
+            <summary>
+            审计日志接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IAuditLogService.CreateAsync(Ape.Volo.Entity.Monitor.AuditLog)">
+            <summary>
+            创建
+            </summary>
+            <param name="auditLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IAuditLogService.CreateListAsync(System.Collections.Generic.List{Ape.Volo.Entity.Monitor.AuditLog})">
+            <summary>
+            创建
+            </summary>
+            <param name="auditLogs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IAuditLogService.QueryAsync(Ape.Volo.IBusiness.QueryModel.LogQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="logQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IAuditLogService.QueryByCurrentAsync(Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询(个人)
+            </summary>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Monitor.IExceptionLogService">
+            <summary>
+            系统日志接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IExceptionLogService.CreateAsync(Ape.Volo.Entity.Monitor.ExceptionLog)">
+            <summary>
+            创建
+            </summary>
+            <param name="exceptionLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IExceptionLogService.QueryAsync(Ape.Volo.IBusiness.QueryModel.LogQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="logQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Monitor.IOnlineUserService">
+            <summary>
+            在线用户接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IOnlineUserService.QueryAsync(Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IOnlineUserService.DropOutAsync(System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            强退
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IOnlineUserService.DownloadAsync">
+            <summary>
+            下载
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Monitor.IServerResourcesService">
+            <summary>
+            服务器资源信息接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Monitor.IServerResourcesService.Query">
+            <summary>
+            查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IApisService">
+            <summary>
+            apis 接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateApisDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateApisDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateApisDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.QueryAsync(Ape.Volo.IBusiness.QueryModel.ApisQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="apisQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.QueryAllAsync">
+            <summary>
+            查询所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IApisService.CreateAsync(System.Collections.Generic.List{Ape.Volo.Entity.Permission.Apis})">
+            <summary>
+            
+            </summary>
+            <param name="apis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IDataScopeService">
+            <summary>
+            数据权限接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDataScopeService.GetDataScopeAccountsAsync(System.Int64)">
+            <summary>
+            获取用户所有角色关联的部门ID
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService">
+            <summary>
+            部门接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateDepartmentDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateDepartmentDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateDepartmentDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.DeleteAsync(System.Collections.Generic.List{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.QueryAsync(Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="deptQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.QueryAllAsync">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="deptQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.QueryByPIdAsync(System.Int64)">
+            <summary>
+            根据父ID获取全部
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.QueryByIdAsync(System.Int64)">
+            <summary>
+            根据ID获取一个部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.QuerySuperiorDeptAsync(System.Int64)">
+            <summary>
+            获取子级所有部门
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IDepartmentService.GetChildIds(System.Collections.Generic.List{System.Int64},System.Collections.Generic.List{System.Int64})">
+            <summary>
+            获取所选部门及全部下级部门ID
+            </summary>
+            <param name="ids"></param>
+            <param name="allIds"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IJobService">
+            <summary>
+            岗位接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateJobDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateJobDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateJobDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.QueryAsync(Ape.Volo.IBusiness.QueryModel.JobQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="jobQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.JobQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="jobQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IJobService.QueryAllAsync">
+            <summary>
+            获取所有岗位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IMenuService">
+            <summary>
+            菜单接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateMenuDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateMenuDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateMenuDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.QueryAsync(Ape.Volo.IBusiness.QueryModel.MenuQueryCriteria)">
+            <summary>
+            查询
+            </summary>
+            <param name="menuQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.MenuQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="menuQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.QueryAllAsync">
+            <summary>
+            获取所有菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.FindByPIdAsync(System.Int64)">
+            <summary>
+            根据父ID获取菜单
+            </summary>
+            <param name="pid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.BuildTreeAsync(System.Int64)">
+            <summary>
+            构建前端菜单树
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.FindSuperiorAsync(System.Int64)">
+            <summary>
+            获取所有同级或父级菜单
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IMenuService.FindChildAsync(System.Int64)">
+            <summary>
+            获取所有子菜单ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IOnlineUserService">
+            <summary>
+            在线用户接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IOnlineUserService.SaveLoginUserAsync(Ape.Volo.IBusiness.Vo.JwtUserVo,System.String)">
+            <summary>
+            保存在线用户
+            </summary>
+            <param name="jwtUserVo"></param>
+            <param name="remoteIp"></param>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IOnlineUserService.CreateJwtUserAsync(Ape.Volo.IBusiness.Dto.Permission.UserDto,System.Collections.Generic.List{System.String})">
+            <summary>
+            jwt用户信息
+            </summary>
+            <param name="userDto"></param>
+            <param name="permissionRoles"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IPermissionService">
+            <summary>
+            权限信息接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IPermissionService.GetPermissionRolesAsync(System.Int64)">
+            <summary>
+            获取权限标识符
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IPermissionService.GetPermissionVoAsync(System.Int64)">
+            <summary>
+            获取权限urls
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IRoleService">
+            <summary>
+            角色接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.QueryAsync(Ape.Volo.IBusiness.QueryModel.RoleQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="roleQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.RoleQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="roleQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.QueryAllAsync">
+            <summary>
+            获取全部角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.QueryUserRoleLevelAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            获取用户角色等级
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.VerificationUserRoleLevelAsync(System.Nullable{System.Int32})">
+            <summary>
+            验证角色等级
+            </summary>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.UpdateRolesMenusAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto)">
+            <summary>
+            更新角色菜单
+            </summary>
+            <param name="createUpdateRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IRoleService.UpdateRolesApisAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateRoleDto)">
+            <summary>
+            更新角色Apis
+            </summary>
+            <param name="createUpdateRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Permission.IUserService">
+            <summary>
+            用户接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.CreateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateUserDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.UpdateAsync(Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateUserDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.QueryAsync(Ape.Volo.IBusiness.QueryModel.UserQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="userQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.UserQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="userQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.QueryByIdAsync(System.Int64)">
+            <summary>
+            查找用户
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.QueryByNameAsync(System.String)">
+            <summary>
+            查找用户
+            </summary>
+            <param name="userName">用户名</param>
+            <returns>用户实体</returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.QueryByDeptIdsAsync(System.Collections.Generic.List{System.Int64})">
+            <summary>
+            根据部门ID查找用户
+            </summary>
+            <param name="deptIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.UpdateCenterAsync(Ape.Volo.IBusiness.Dto.Permission.UpdateUserCenterDto)">
+            <summary>
+            修改个人中心信息
+            </summary>
+            <param name="updateUserCenterDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.UpdatePasswordAsync(Ape.Volo.IBusiness.Dto.Permission.UpdateUserPassDto)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="userPassDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.UpdateEmailAsync(Ape.Volo.IBusiness.Dto.Permission.UpdateUserEmailDto)">
+            <summary>
+            修改邮箱
+            </summary>
+            <param name="updateUserEmailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Permission.IUserService.UpdateAvatarAsync(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            修改头像
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService">
+            <summary>
+            邮件队列接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.CreateAsync(Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateQueuedEmailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.UpdateTriesAsync(Ape.Volo.IBusiness.Dto.Queued.QueuedEmailDto)">
+            <summary>
+            更新发送次数
+            </summary>
+            <param name="queuedEmailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.UpdateAsync(Ape.Volo.IBusiness.Dto.Queued.CreateUpdateQueuedEmailDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateQueuedEmailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.QueryAsync(Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="queuedEmailQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.Queued.IQueuedEmailService.ResetEmail(System.String,System.String)">
+            <summary>
+            重置邮箱
+            </summary>
+            <param name="emailAddres"></param>
+            <param name="messageTemplateName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IAppSecretService">
+            <summary>
+            应用秘钥
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IAppSecretService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateAppSecretDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IAppSecretService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateAppSecretDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateAppSecretDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IAppSecretService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IAppSecretService.QueryAsync(Ape.Volo.IBusiness.QueryModel.AppsecretQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="appsecretQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IAppSecretService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.AppsecretQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="appsecretQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IDictDetailService">
+            <summary>
+            字典详情接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictDetailService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateDictDetailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictDetailService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDetailDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateDictDetailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictDetailService.DeleteAsync(System.Int64)">
+            <summary>
+            删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictDetailService.QueryAsync(System.String)">
+            <summary>
+            查询
+            </summary>
+            <param name="dictName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IDictService">
+            <summary>
+            字典接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateDictDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateDictDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateDictDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictService.QueryAsync(Ape.Volo.IBusiness.QueryModel.DictQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="dictQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IDictService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.DictQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="dictQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IFileRecordService">
+            <summary>
+            文件记录接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IFileRecordService.CreateAsync(System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            创建
+            </summary>
+            <param name="description"></param>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IFileRecordService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateFileRecordDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateFileRecordDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IFileRecordService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IFileRecordService.QueryAsync(Ape.Volo.IBusiness.QueryModel.FileRecordQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="fileRecordQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IFileRecordService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.FileRecordQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="fileRecordQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IQuartzNetLogService">
+            <summary>
+            QuartzJob日志接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetLogService.CreateAsync(Ape.Volo.Entity.System.QuartzNetLog)">
+            <summary>
+            创建
+            </summary>
+            <param name="quartzNetLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetLogService.QueryAsync(Ape.Volo.IBusiness.QueryModel.QuartzNetLogQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="quartzNetLogQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetLogService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.QuartzNetLogQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="quartzNetLogQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.IQuartzNetService">
+            <summary>
+            QuartzJob作业接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.QueryAllAsync">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateQuartzNetDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateQuartzNetDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateQuartzNetDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.UpdateJobInfoAsync(Ape.Volo.Entity.System.QuartzNet,Ape.Volo.Entity.System.QuartzNetLog)">
+            <summary>
+            更新任务与日志
+            </summary>
+            <param name="quartzNet"></param>
+            <param name="quartzNetLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.DeleteAsync(System.Collections.Generic.List{Ape.Volo.Entity.System.QuartzNet})">
+            <summary>
+            删除
+            </summary>
+            <param name="quartzNets"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.QueryAsync(Ape.Volo.IBusiness.QueryModel.QuartzNetQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="quartzNetQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.IQuartzNetService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.QuartzNetQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="quartzNetQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.ISettingService">
+            <summary>
+            全局设置接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateSettingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateSettingDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateSettingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.QueryAsync(Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="settingQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="settingQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ISettingService.GetSettingValue``1(System.String)">
+            <summary>
+            根据名称查询
+            </summary>
+            <param name="settingName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.ITenantService">
+            <summary>
+            租户接口
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto)">
+            <summary>
+            创建
+            </summary>
+            <param name="createUpdateTenantDtoDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto)">
+            <summary>
+            更新
+            </summary>
+            <param name="createUpdateTenantDtoDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
+            <summary>
+            删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.QueryAsync(Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria,Ape.Volo.Common.Model.Pagination)">
+            <summary>
+            查询
+            </summary>
+            <param name="tenantQueryCriteria"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.QueryAllAsync">
+            <summary>
+            查询全部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria)">
+            <summary>
+            下载
+            </summary>
+            <param name="tenantQueryCriteria"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Interface.System.ITokenBlacklistService">
+            <summary>
+            Token黑名单
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.ApisQueryCriteria">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.ApisQueryCriteria.Group">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.ApisQueryCriteria.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.ApisQueryCriteria.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.AppsecretQueryCriteria">
+            <summary>
+            密钥查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.AppsecretQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.DateRange">
+            <summary>
+            日期范围
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DateRange.CreateTime">
+            <summary>
+            开始[0]--结束[1]
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria">
+            <summary>
+            部门查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria.DeptName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DeptQueryCriteria.ParentId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.DictDetailQueryCriteria">
+            <summary>
+            字典详情查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DictDetailQueryCriteria.Label">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DictDetailQueryCriteria.DictName">
+            <summary>
+            字典名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.DictQueryCriteria">
+            <summary>
+            字典查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DictQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.DictQueryCriteria.DictType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria">
+            <summary>
+            邮箱账户查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria.DisplayName">
+            <summary>
+            现实名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.EmailAccountQueryCriteria.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.EmailMessageTemplateQueryCriteria">
+            <summary>
+            邮箱模板查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.EmailMessageTemplateQueryCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.EmailMessageTemplateQueryCriteria.IsActive">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.FileRecordQueryCriteria">
+            <summary>
+            文件记录查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.FileRecordQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.JobQueryCriteria">
+            <summary>
+            岗位查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.JobQueryCriteria.JobName">
+            <summary>
+            岗位名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.JobQueryCriteria.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.LogQueryCriteria">
+            <summary>
+            日志查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.LogQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.MenuQueryCriteria">
+            <summary>
+            菜单查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.MenuQueryCriteria.Title">
+            <summary>
+            菜单标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.MenuQueryCriteria.ParentId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.QuartzNetLogQueryCriteria">
+            <summary>
+            任务调度日志查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QuartzNetLogQueryCriteria.Id">
+            <summary>
+            任务ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QuartzNetLogQueryCriteria.IsSuccess">
+            <summary>
+            是否执行成功
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.QuartzNetQueryCriteria">
+            <summary>
+            任务调度查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QuartzNetQueryCriteria.TaskName">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria">
+            <summary>
+            队列邮件查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria.Id">
+            <summary>
+            队列ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria.MaxTries">
+            <summary>
+            最大执行次数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria.EmailAccountId">
+            <summary>
+            发送方
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria.To">
+            <summary>
+            接收方
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.QueuedEmailQueryCriteria.IsSend">
+            <summary>
+            是否已发送
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.RoleQueryCriteria">
+            <summary>
+            角色查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.RoleQueryCriteria.RoleName">
+            <summary>
+            角色名称
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria">
+            <summary>
+            全局设置查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria">
+            <summary>
+            租户查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.DbType">
+            <summary>
+            数据库类型<br/>
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria">
+            <summary>
+            用户查询参数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria.DeptIds">
+            <summary>
+            部门ID集合
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria.KeyWords">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria.DeptId">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.RequestModel.IdCollection">
+            <summary>
+            id模型(log)
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.RequestModel.IdCollection.IdArray">
+            <summary>
+            ids
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.RequestModel.IdCollectionString">
+            <summary>
+            id模型(string)
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.RequestModel.LoginAuthUser">
+            <summary>
+            登录用户
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.RequestModel.LoginAuthUser.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.RequestModel.LoginAuthUser.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Vo.JwtUserVo">
+            <summary>
+            JWT令牌用户
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.JwtUserVo.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.JwtUserVo.Roles">
+            <summary>
+            角色权限
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.JwtUserVo.DataScopes">
+            <summary>
+            部门权限
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Vo.MenuMetaVO">
+            <summary>
+            菜单Meta
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Vo.MenuMetaVO.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Ape.Volo.IBusiness.Vo.MenuMetaVO.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="title"></param>
+            <param name="icon"></param>
+            <param name="noCache"></param>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuMetaVO.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuMetaVO.Icon">
+            <summary>
+            Icon
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuMetaVO.NoCache">
+            <summary>
+            不缓存
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Vo.MenuTreeVo">
+            <summary>
+            菜单视图  构建菜单树
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Hidden">
+            <summary>
+            印象
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Redirect">
+            <summary>
+            重定向
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Component">
+            <summary>
+            组件
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.AlwaysShow">
+            <summary>
+            总是显示
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuTreeVo.Children">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="F:Ape.Volo.IBusiness.Vo.MenuTreeVo.Meta">
+            <summary>
+            Meta
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Vo.MenuVo">
+            <summary>
+            菜单视图 下拉框使用
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Title">
+            <summary>
+            表i
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Path">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Iframe">
+            <summary>
+            IFrame
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Component">
+            <summary>
+            组件
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.ComponentName">
+            <summary>
+            组件名称
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.PId">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Icon">
+            <summary>
+            Icon
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Hidden">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.SubCount">
+            <summary>
+            子菜单个数
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Children">
+            <summary>
+            子节点
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Leaf">
+            <summary>
+            叶
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.HasChildren">
+            <summary>
+            是否有子字节
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.Label">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.MenuVo.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:Ape.Volo.IBusiness.Vo.PermissionVo">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.PermissionVo.Url">
+            <summary>
+            请求路径
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.PermissionVo.Method">
+            <summary>
+            请求方法
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Package">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Core">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.CoreNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Logic">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Used">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Cpu.Idle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Disk.Total">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Disk.Available">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Disk.Used">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Disk.UsageRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Memory.Total">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Memory.Available">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Memory.Used">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Memory.UsageRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Time">
+            <summary>
+            运行时间
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Sys">
+            <summary>
+            系统信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Cpu">
+            <summary>
+            Cpu信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Memory">
+            <summary>
+            内存信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Swap">
+            <summary>
+            交换区信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.ServerResourcesInfo.Disk">
+            <summary>
+            磁盘信息
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Swap.Total">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Swap.Used">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Swap.Available">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Swap.UsageRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Sys.Os">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Sys.Day">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Ape.Volo.IBusiness.Vo.ServerResources.Sys.Ip">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>
