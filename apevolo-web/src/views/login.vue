@@ -8,9 +8,9 @@
       label-width="0px"
       class="login-form animated bounceIn"
     >
-      <img :src="require('@/assets/images/logo.png')" alt="Knight Logo" class="custom-image" />
-      <br />
-      <br />
+      <img :src="require('@/assets/images/logo.png')" alt="Knight Logo" class="custom-image">
+      <br>
+      <br>
       <h4 class="title">
         Welcome to Knight. 👏
       </h4>
@@ -47,8 +47,6 @@
     <!--  底部  -->
     <div v-if="$store.state.settings.showFooter" class="login-copyright">
       <span v-html="$store.state.settings.footerTxt" />
-      <!-- <span> ⋅ </span>
-      <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">{{ $store.state.settings.caseNumber }}</a> -->
     </div>
   </div>
 </template>
@@ -66,11 +64,11 @@ export default {
       codeUrl: '',
       loginForm: {
         username: 'apevolo',
-        password: '123456',
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', message: '用户名不能为空' }],
-        password: [{ required: true, trigger: 'blur', message: '密码不能为空' }],
+        password: [{ required: true, trigger: 'blur', message: '密码不能为空' }]
       },
       loading: false,
       redirect: undefined
@@ -96,7 +94,7 @@ export default {
       this.$refs.loginForm.validate(valid => {
         const user = {
           username: this.loginForm.username,
-          password: encrypt(this.loginForm.password),
+          password: encrypt(this.loginForm.password)
         }
         if (valid) {
           this.loading = true

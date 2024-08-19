@@ -8,7 +8,7 @@
         <div class="bullshit__oops">ERROR!</div>
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info" />
-        <a href="/" class="bullshit__return-home">返回首页</a>
+        <a href="/" class="bullshit__return-home">返回表盘</a>
       </div>
     </div>
   </div>
