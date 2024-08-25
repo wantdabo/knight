@@ -33,28 +33,6 @@ public class SugarRepository<TEntity> : ISugarRepository<TEntity> where TEntity 
             return;
         }
 
-        var multiDbTenantAttribute = typeof(TEntity).GetCustomAttribute<MultiDbTenantAttribute>();
-        if (multiDbTenantAttribute != null)
-        {
-            if (App.HttpUser.IsNotNull() && App.HttpUser.TenantId > 0)
-            {
-                var tenants = sqlSugarScope.Queryable<Tenant>().WithCache(86400).ToList();
-                var tenant = tenants.FirstOrDefault(x => x.TenantId == App.HttpUser.TenantId);
-                if (tenant != null)
-                {
-                    var iTenant = sqlSugarScope.AsTenant();
-                    if (!iTenant.IsAnyConnection(tenant.ConfigId))
-                    {
-                        iTenant.AddConnection(TenantHelper.GetConnectionConfig(tenant.ConfigId, tenant.DbType,
-                            tenant.ConnectionString));
-                    }
-
-                    SugarClient = iTenant.GetConnectionScope(tenant.ConfigId);
-                    return;
-                }
-            }
-        }
-
 
         SugarClient = sqlSugarScope;
     }

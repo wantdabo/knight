@@ -715,11 +715,6 @@
             性别
             </summary>
         </member>
-        <member name="P:Ape.Volo.Entity.Permission.User.TenantId">
-            <summary>
-            租户ID
-            </summary>
-        </member>
         <member name="P:Ape.Volo.Entity.Permission.User.Dept">
             <summary>
             部门
@@ -733,11 +728,6 @@
         <member name="P:Ape.Volo.Entity.Permission.User.Jobs">
             <summary>
             岗位集合
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Permission.User.Tenant">
-            <summary>
-            租户
             </summary>
         </member>
         <member name="T:Ape.Volo.Entity.Permission.UserJob">
@@ -926,13 +916,6 @@
         <member name="M:Ape.Volo.Entity.Seed.DataSeeder.InitLogData(Ape.Volo.Entity.Seed.DataContext)">
             <summary>
             初始化日志库
-            </summary>
-            <param name="dataContext"></param>
-            <exception cref="T:System.Exception"></exception>
-        </member>
-        <member name="M:Ape.Volo.Entity.Seed.DataSeeder.InitTenantDataAsync(Ape.Volo.Entity.Seed.DataContext)">
-            <summary>
-            初始化租户库
             </summary>
             <param name="dataContext"></param>
             <exception cref="T:System.Exception"></exception>
@@ -1234,51 +1217,6 @@
             描述
             </summary>
         </member>
-        <member name="T:Ape.Volo.Entity.System.Tenant">
-            <summary>
-            租户
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.TenantId">
-            <summary>
-            租户Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.ConfigId">
-            <summary>
-            库Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.DbType">
-            <summary>
-            数据库类型<br/>
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.ConnectionString">
-            <summary>
-            数据库连接
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.System.Tenant.Users">
-            <summary>
-            用户列表
-            </summary>
-        </member>
         <member name="T:Ape.Volo.Entity.System.TokenBlacklist">
             <summary>
             Token黑名单
@@ -1287,38 +1225,6 @@
         <member name="P:Ape.Volo.Entity.System.TokenBlacklist.AccessToken">
             <summary>
             令牌 登录token的MD5值
-            </summary>
-        </member>
-        <member name="T:Ape.Volo.Entity.Test.TestOrder">
-            <summary>
-            多租户测试
-            单表ID隔离注释[MultiDbTenant]，继承ITenantEntity
-            多库隔离取消继承ITenantEntity，增加[MultiDbTenant]
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Test.TestOrder.OrderNo">
-            <summary>
-            订单号
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Test.TestOrder.GoodsName">
-            <summary>
-            商品名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Test.TestOrder.Qty">
-            <summary>
-            数量
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Test.TestOrder.Price">
-            <summary>
-            价格
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Entity.Test.TestOrder.TenantId">
-            <summary>
-            
             </summary>
         </member>
     </members>

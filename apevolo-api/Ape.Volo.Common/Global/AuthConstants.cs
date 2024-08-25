@@ -136,8 +136,6 @@ public class AuthConstants
 
         public const string Ip = "ip";
 
-        public const string TenantId = "tenant_id";
-
         public const string DeptId = "dept_id";
     }
 }

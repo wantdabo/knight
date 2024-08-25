@@ -668,11 +668,6 @@
             岗位
             </summary>
         </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserDto.TenantId">
-            <summary>
-            租户ID
-            </summary>
-        </member>
         <member name="T:Ape.Volo.IBusiness.Dto.Permission.CreateUpdateUserJobDto">
             <summary>
             用户岗位Dto
@@ -1162,16 +1157,6 @@
             岗位列表
             </summary>
         </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.TenantId">
-            <summary>
-            租户ID
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.Permission.UserDto.Tenant">
-            <summary>
-            租户
-            </summary>
-        </member>
         <member name="T:Ape.Volo.IBusiness.Dto.Permission.UserJobDto">
             <summary>
             用户岗位Dto
@@ -1612,41 +1597,6 @@
             描述
             </summary>
         </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.TenantId">
-            <summary>
-            租户Id 用户绑定用的
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.ConfigId">
-            <summary>
-            标识Id 获取租户连接用的
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.DbType">
-            <summary>
-            数据库类型<br/>
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto.Connection">
-            <summary>
-            数据库连接
-            </summary>
-        </member>
         <member name="T:Ape.Volo.IBusiness.Dto.System.DictDetailDto">
             <summary>
             字典详情Dto
@@ -1916,46 +1866,6 @@
         <member name="P:Ape.Volo.IBusiness.Dto.System.SettingDto.Description">
             <summary>
             描述
-            </summary>
-        </member>
-        <member name="T:Ape.Volo.IBusiness.Dto.System.TenantDto">
-            <summary>
-            租户dto
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.TenantId">
-            <summary>
-            租户Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.ConfigId">
-            <summary>
-            库Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.DbType">
-            <summary>
-            库类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.Dto.System.TenantDto.ConnectionString">
-            <summary>
-            库连接
             </summary>
         </member>
         <member name="T:Ape.Volo.IBusiness.ExportModel.Message.Email.Account.EmailAccountExport">
@@ -2546,46 +2456,6 @@
         <member name="P:Ape.Volo.IBusiness.ExportModel.System.SettingExport.Description">
             <summary>
             描述
-            </summary>
-        </member>
-        <member name="T:Ape.Volo.IBusiness.ExportModel.System.TenantExport">
-            <summary>
-            租户导出模板
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.TenantId">
-            <summary>
-            租户Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.Description">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.ConfigId">
-            <summary>
-            库Id
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.DbType">
-            <summary>
-            库类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.ExportModel.System.TenantExport.ConnectionString">
-            <summary>
-            库连接
             </summary>
         </member>
         <member name="T:Ape.Volo.IBusiness.Interface.Message.Email.IEmailAccountService">
@@ -3612,53 +3482,6 @@
             <param name="settingName"></param>
             <returns></returns>
         </member>
-        <member name="T:Ape.Volo.IBusiness.Interface.System.ITenantService">
-            <summary>
-            租户接口
-            </summary>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.CreateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto)">
-            <summary>
-            创建
-            </summary>
-            <param name="createUpdateTenantDtoDto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.UpdateAsync(Ape.Volo.IBusiness.Dto.System.CreateUpdateTenantDto)">
-            <summary>
-            更新
-            </summary>
-            <param name="createUpdateTenantDtoDto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.DeleteAsync(System.Collections.Generic.HashSet{System.Int64})">
-            <summary>
-            删除
-            </summary>
-            <param name="ids"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.QueryAsync(Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria,Ape.Volo.Common.Model.Pagination)">
-            <summary>
-            查询
-            </summary>
-            <param name="tenantQueryCriteria"></param>
-            <param name="pagination"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.QueryAllAsync">
-            <summary>
-            查询全部
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Ape.Volo.IBusiness.Interface.System.ITenantService.DownloadAsync(Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria)">
-            <summary>
-            下载
-            </summary>
-            <param name="tenantQueryCriteria"></param>
-            <returns></returns>
-        </member>
         <member name="T:Ape.Volo.IBusiness.Interface.System.ITokenBlacklistService">
             <summary>
             Token黑名单
@@ -3917,26 +3740,6 @@
         <member name="P:Ape.Volo.IBusiness.QueryModel.SettingQueryCriteria.Enabled">
             <summary>
             是否启用
-            </summary>
-        </member>
-        <member name="T:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria">
-            <summary>
-            租户查询参数
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.Name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.IBusiness.QueryModel.TenantQueryCriteria.DbType">
-            <summary>
-            数据库类型<br/>
             </summary>
         </member>
         <member name="T:Ape.Volo.IBusiness.QueryModel.UserQueryCriteria">

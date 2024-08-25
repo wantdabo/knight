@@ -218,11 +218,6 @@
             源对象
             </summary>
         </member>
-        <member name="T:Ape.Volo.Common.Attributes.MultiDbTenantAttribute">
-            <summary>
-            租户标识(库隔离)
-            </summary>
-        </member>
         <member name="T:Ape.Volo.Common.Attributes.NotAuditAttribute">
             <summary>
             表示不需要记录审计日志
@@ -805,21 +800,6 @@
         <member name="F:Ape.Volo.Common.Enums.RunMode.Publish">
             <summary>
             发布
-            </summary>
-        </member>
-        <member name="T:Ape.Volo.Common.Enums.TenantType">
-            <summary>
-            租户类型
-            </summary>
-        </member>
-        <member name="F:Ape.Volo.Common.Enums.TenantType.Id">
-            <summary>
-            Id隔离
-            </summary>
-        </member>
-        <member name="F:Ape.Volo.Common.Enums.TenantType.Db">
-            <summary>
-            库隔离
             </summary>
         </member>
         <member name="F:Ape.Volo.Common.Enums.TriggerType.Cron">
@@ -3297,15 +3277,6 @@
             https://stackoverflow.com/questions/5095183/how-would-i-run-an-async-taskt-method-synchronously
             </summary>
         </member>
-        <member name="M:Ape.Volo.Common.Helper.TenantHelper.GetConnectionConfig(System.String,SqlSugar.DbType,System.String)">
-            <summary>
-            获取租户数据库连接
-            </summary>
-            <param name="configId">唯一标识</param>
-            <param name="dbType">数据库类型</param>
-            <param name="connection">连接符</param>
-            <returns></returns>
-        </member>
         <member name="T:Ape.Volo.Common.Helper.TreeHelper`1">
             <summary>
             构建树
@@ -3548,16 +3519,6 @@
             是否删除
             </summary>
         </member>
-        <member name="T:Ape.Volo.Common.Model.ITenantEntity">
-            <summary>
-            租户标识(Id隔离)
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Common.Model.ITenantEntity.TenantId">
-            <summary>
-            租户Id
-            </summary>
-        </member>
         <member name="T:Ape.Volo.Common.Model.Pagination">
             <summary>
             分页
@@ -3711,11 +3672,6 @@
             部门ID
             </summary>
         </member>
-        <member name="P:Ape.Volo.Common.WebApp.HttpUser.TenantId">
-            <summary>
-            租户ID
-            </summary>
-        </member>
         <member name="P:Ape.Volo.Common.WebApp.HttpUser.JwtToken">
             <summary>
             jwt token
@@ -3746,11 +3702,6 @@
         <member name="P:Ape.Volo.Common.WebApp.IHttpUser.DeptId">
             <summary>
             部门ID
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Common.WebApp.IHttpUser.TenantId">
-            <summary>
-            租户ID
             </summary>
         </member>
         <member name="P:Ape.Volo.Common.WebApp.IHttpUser.JwtToken">
@@ -3838,11 +3789,6 @@
         <member name="P:Ape.Volo.Common.WebApp.LoginUserInfo.IsAdmin">
             <summary>
             是否系统管理员
-            </summary>
-        </member>
-        <member name="P:Ape.Volo.Common.WebApp.LoginUserInfo.TenantId">
-            <summary>
-            租户Id
             </summary>
         </member>
     </members>

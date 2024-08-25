@@ -28,8 +28,6 @@ public static class DataSeederMiddleware
                     settingsOptions.IsQuickDebug).Wait();
                 Thread.Sleep(500); //保证顺序输出
                 DataSeeder.InitLogData(dataContext);
-                Thread.Sleep(500);
-                DataSeeder.InitTenantDataAsync(dataContext).Wait();
             }
         }
         catch (Exception e)
