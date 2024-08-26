@@ -153,9 +153,6 @@ public static class SqlSugarSetup
                         //软删除
                         sugarScopeProvider.ConfiguringSoftDeletedFilter();
 
-                        //租户
-                        sugarScopeProvider.ConfiguringTenantFilter();
-
                         //数据权限  这个要放在最后
                         sugarScopeProvider.ConfiguringUserDataScopeFilter();
 
@@ -230,16 +227,6 @@ public static class SqlSugarSetup
                         {
                             baseEntity.CreateBy = App.HttpUser.Account;
                         }
-
-                        var tenant = baseEntity as ITenantEntity;
-                        if (tenant != null && App.HttpUser.TenantId > 0)
-                        {
-                            if (tenant.TenantId == 0)
-                            {
-                                tenant.TenantId = App.HttpUser.TenantId;
-                            }
-                        }
-
                         break;
                     }
                     case DataFilterType.UpdateByObject:
@@ -281,16 +268,6 @@ public static class SqlSugarSetup
                         {
                             baseEntityNoDataScope.CreateBy = App.HttpUser.Account;
                         }
-
-                        var tenant = baseEntityNoDataScope as ITenantEntity;
-                        if (tenant != null && App.HttpUser.TenantId > 0)
-                        {
-                            if (tenant.TenantId == 0)
-                            {
-                                tenant.TenantId = App.HttpUser.TenantId;
-                            }
-                        }
-
                         break;
                     }
                     case DataFilterType.UpdateByObject:
@@ -396,17 +373,6 @@ public static class SqlSugarSetup
     private static void ConfiguringSoftDeletedFilter(this SqlSugarScopeProvider db)
     {
         db.QueryFilter.AddTableFilter<ISoftDeletedEntity>(it => it.IsDeleted == false);
-    }
-
-    /// <summary>
-    /// 配置多租户过滤器
-    /// </summary>
-    private static void ConfiguringTenantFilter(this SqlSugarScopeProvider db)
-    {
-        if (App.HttpUser.IsNotNull() && App.HttpUser.TenantId > 0)
-        {
-            db.QueryFilter.AddTableFilter<ITenantEntity>(it => it.TenantId == App.HttpUser.TenantId);
-        }
     }
 
     /// <summary>

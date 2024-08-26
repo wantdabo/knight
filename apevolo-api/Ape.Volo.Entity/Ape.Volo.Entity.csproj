@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Ape.Volo.Common\Ape.Volo.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
+
 </Project>

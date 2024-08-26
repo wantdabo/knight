@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Test\" />
     <Folder Include="MQ\Rabbit"/>
     <Folder Include="wwwroot\exportFile\"/>
   </ItemGroup>

@@ -153,21 +153,6 @@
                 />
               </el-select>
             </el-form-item>
-            <el-form-item style="margin-bottom: 0" label="租户" prop="tenants">
-              <el-select
-                v-model="form.tenantId"
-                value-key="id"
-                style="width: 437px"
-                clearable
-              >
-                <el-option
-                  v-for="item in tenants"
-                  :key="item.tenantId"
-                  :label="item.name"
-                  :value="parseInt(item.tenantId)"
-                />
-              </el-select>
-            </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
             <el-button type="text" @click="crud.cancelCU">取消</el-button>
@@ -263,14 +248,6 @@
               </el-tag>
             </template>
           </el-table-column>
-          <el-table-column
-            :show-overflow-tooltip="true"
-            label="租户"
-          >
-            <template slot-scope="scope">
-              <div v-if="scope.row.tenant">{{ scope.row.tenant.name }}</div>
-            </template>
-          </el-table-column>
           <el-table-column label="状态" align="center" prop="enabled">
             <template slot-scope="scope">
               <el-switch
@@ -317,7 +294,6 @@ import { isvalidPhone } from '@/utils/validate'
 import { getDepts, getDeptSuperior } from '@/api/permission/dept'
 import { getAllRole, getLevel } from '@/api/permission/role'
 import { getAllJob } from '@/api/permission/job'
-import { getAllTenant } from '@/api/system/tenant'
 import CRUD, { presenter, header, form, crud } from '@crud/crud'
 import rrOperation from '@crud/RR.operation'
 import crudOperation from '@crud/CRUD.operation'
@@ -342,8 +318,7 @@ const defaultForm = {
   roles: [],
   jobs: [],
   dept: { id: null },
-  phone: '',
-  tenantId: null
+  phone: ''
 }
 export default {
   name: 'User',
@@ -385,7 +360,6 @@ export default {
       jobs: [],
       level: 3,
       roles: [],
-      tenants: [],
       jobDatas: [],
       roleDatas: [],
       defaultProps: { children: 'children', label: 'name', isLeaf: 'leaf' },
@@ -467,7 +441,6 @@ export default {
       }
       this.getRoleLevel()
       this.getJobs()
-      this.getTenants()
       // form.enabled = form.enabled
     },
     // 新增前将多选的值设置为空
@@ -492,9 +465,6 @@ export default {
         const data = { id: job.id, name: job.name }
         userJobs.push(data)
       })
-      if (form.tenantId === 0) {
-        this.form.tenantId = null
-      }
     },
     // 提交前做的操作
     [CRUD.HOOK.afterValidateCU](crud) {
@@ -653,14 +623,6 @@ export default {
       getLevel()
         .then((res) => {
           this.level = res.level
-        })
-        .catch(() => {
-        })
-    },
-    getTenants() {
-      getAllTenant()
-        .then((res) => {
-          this.tenants = res.content
         })
         .catch(() => {
         })

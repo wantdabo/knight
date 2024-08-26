@@ -68,7 +68,6 @@ public class DataSeeder
                 .Where(x => (x.BaseType == typeof(BaseEntity) || x.BaseType == typeof(BaseEntityNoDataScope) ||
                              x.BaseType == typeof(RootKey<long>)) &&
                             x != typeof(BaseEntity) && x != typeof(BaseEntityNoDataScope) && x.Namespace != null &&
-                            x.GetCustomAttribute<MultiDbTenantAttribute>() == null &&
                             !x.Namespace.StartsWith("Ape.Volo.Entity.Monitor")).ToList();
             entityList.Add(typeof(UserRole));
             entityList.Add(typeof(UserJob));
@@ -429,25 +428,6 @@ public class DataSeeder
 
                 #endregion
 
-                #region 租户
-
-                if (!await dataContext.Db.Queryable<Tenant>().AnyAsync())
-                {
-                    var attr = typeof(Tenant).GetCustomAttribute<SugarTable>();
-                    if (attr != null)
-                    {
-                        await dataContext.GetEntityDb<Tenant>().InsertRangeAsync(
-                            JsonConvert.DeserializeObject<List<Tenant>>(
-                                FileHelper.ReadFile(string.Format(seedDataFolder, attr.TableName), Encoding.UTF8),
-                                setting));
-                        ConsoleHelper.WriteLine(
-                            $"Entity:{nameof(Tenant)}-->Table:{attr.TableName}-->Desc:{attr.TableDescription}-->初始数据成功！",
-                            ConsoleColor.Green);
-                    }
-                }
-
-                #endregion
-
                 ConsoleHelper.WriteLine("初始化主库数据完成！", ConsoleColor.Green);
                 ConsoleHelper.WriteLine();
             }
@@ -530,85 +510,5 @@ public class DataSeeder
         });
         ConsoleHelper.WriteLine("初始化日志库数据表成功！", ConsoleColor.Green);
         ConsoleHelper.WriteLine();
-    }
-
-
-    /// <summary>
-    /// 初始化租户库
-    /// </summary>
-    /// <param name="dataContext"></param>
-    /// <exception cref="Exception"></exception>
-    public static async Task InitTenantDataAsync(DataContext dataContext)
-    {
-        var tenants = await dataContext.Db.Queryable<Tenant>().Where(s => s.TenantType == TenantType.Db)
-            .ToListAsync();
-        if (tenants.Count == 0)
-        {
-            return;
-        }
-
-        ConsoleHelper.WriteLine("初始化租户数据库....！", ConsoleColor.Green);
-        foreach (var tenant in tenants)
-        {
-            var iTenant = dataContext.Db.AsTenant();
-            iTenant.RemoveConnection(tenant.ConfigId);
-            iTenant.AddConnection(TenantHelper.GetConnectionConfig(tenant.ConfigId, tenant.DbType,
-                tenant.ConnectionString));
-            var db = iTenant.GetConnectionScope(tenant.ConfigId);
-            if (db.CurrentConnectionConfig.DbType != DbType.Oracle)
-            {
-                db.DbMaintenance.CreateDatabase();
-            }
-            else
-            {
-                //已有库得情况下 把抛异常代码注释掉
-                throw new Exception("sqlSugar不支持Oracle使用代码建库,请先建库后注释该代码重新启动！");
-            }
-
-            ConsoleHelper.WriteLine($"Tenant Db Id: {tenant.ConfigId}");
-            ConsoleHelper.WriteLine($"Tenant Db Type: {tenant.DbType}");
-            ConsoleHelper.WriteLine($"Tenant Db ConnectString: {tenant.ConnectionString}");
-            ConsoleHelper.WriteLine($"初始化租户{tenant.Name}库成功。", ConsoleColor.Green);
-            ConsoleHelper.WriteLine($"初始化租户{tenant.Name}数据表....");
-
-            var entityList = GlobalType.EntityTypes
-                .Where(x => (x.BaseType == typeof(BaseEntity) || x.BaseType == typeof(RootKey<long>)) &&
-                            x != typeof(BaseEntity) && x.Namespace != null &&
-                            x.GetCustomAttribute<MultiDbTenantAttribute>() != null &&
-                            !x.Namespace.StartsWith("Ape.Volo.Entity.Monitor")).ToList();
-            if (entityList.Any())
-            {
-                var masterTables = db.DbMaintenance.GetTableInfoList();
-                entityList.ForEach(entity =>
-                {
-                    var entityInfo = db.EntityMaintenance.GetEntityInfo(entity);
-                    // var attr = entity.GetCustomAttribute<SugarTable>();
-                    // var tableName = attr == null ? entity.Name : attr.TableName;
-                    if (entityInfo.DbTableName.IsNullOrEmpty())
-                    {
-                        throw new Exception($"类{entityInfo.EntityName}缺少SugarTable表名");
-                    }
-
-                    if (!masterTables.Any(x =>
-                            x.Name.Equals(entityInfo.DbTableName, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        if (entity.GetCustomAttribute<SplitTableAttribute>() != null)
-                        {
-                            db.CodeFirst.SplitTables().InitTables(entity);
-                            ConsoleHelper.WriteLine(
-                                $"Entity:{entity.Name}-->Table:{entityInfo.DbTableName}-->Desc:{entityInfo.TableDescription}-->创建完成！");
-                        }
-                        else
-                        {
-                            db.CodeFirst.InitTables(entity);
-                            ConsoleHelper.WriteLine(
-                                $"Entity:{entity.Name}-->Table:{entityInfo.DbTableName}-->Desc:{entityInfo.TableDescription}-->创建完成！");
-                        }
-                    }
-                });
-            }
-        }
-
-        ConsoleHelper.WriteLine("初始化租户库完成！", ConsoleColor.Green);
     }
 }

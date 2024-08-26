@@ -78,12 +78,6 @@ public class User : BaseEntity
     public string Gender { get; set; }
 
 
-    /// <summary>
-    /// 租户ID
-    /// </summary>
-    public int TenantId { get; set; }
-
-
     #region 扩展属性
 
     /// <summary>
@@ -106,14 +100,7 @@ public class User : BaseEntity
     [SugarColumn(IsIgnore = true)]
     [Navigate(typeof(UserJob), nameof(UserJob.UserId), nameof(UserJob.JobId))]
     public List<Job> Jobs { get; set; }
-
-
-    /// <summary>
-    /// 租户
-    /// </summary>
-    [SugarColumn(IsIgnore = true)]
-    [Navigate(NavigateType.OneToOne, nameof(Tenant.TenantId), nameof(TenantId))]
-    public Tenant Tenant { get; set; }
+    
 
     #endregion
 }

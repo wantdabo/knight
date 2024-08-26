@@ -21,11 +21,6 @@ public interface IHttpUser
     long DeptId { get; }
 
     /// <summary>
-    /// 租户ID
-    /// </summary>
-    int TenantId { get; }
-
-    /// <summary>
     /// 请求携带的Token
     /// </summary>
     /// <returns></returns>
