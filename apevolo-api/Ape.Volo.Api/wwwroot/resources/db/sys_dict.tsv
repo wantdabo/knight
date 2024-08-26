@@ -77,17 +77,6 @@
     "IsDeleted": false
   },
   {
-    "Id": "1799832537057464320",
-    "DictType": 1,
-    "Name": "tenant_type",
-    "Description": "租户类型",
-    "CreateBy": "apevolo",
-    "CreateTime": "/Date(1609430400000+0800)/",
-    "UpdateBy": null,
-    "UpdateTime": null,
-    "IsDeleted": false
-  },
-  {
     "Id": "1799832924720205824",
     "DictType": 1,
     "Name": "db_type",
